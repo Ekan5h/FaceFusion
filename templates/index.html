@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <link rel="icon" type="image/svg" href="/static/head.svg"/>
+        <title>Merge Faces | Face Fusion</title>
+        <link rel="stylesheet" href="/static/main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="overlay">
+            <div id="msg" style="display: none; position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); z-index:1001; font-size: 30px; font-weight: bolder;">
+                It can take upto a minute to process...
+            </div>
+            <div class="overlay"></div>
+            <div class="loader"></div>
+        </div>
+        <div class="logo">
+            Face Fusion
+        </div>
+        <div class = "fileselect">
+            <input onchange="changeFile(this,0)" id="face1" type="file" accept=".jpg, .jpeg, .png">
+            <label id="facel1" class="file" for="face1">Select file...</label>
+            <div class="slider">
+                <input id="ratio" type="range" min=0 max=100 step=1 value=50>
+            </div>
+            <input onchange="changeFile(this,1)" id="face2" type="file" accept=".jpg, .jpeg, .png">
+            <label id="facel2" class="file" for="face2">Select file...</label><br>
+            <button onclick="morph();">Fuse!</button>
+        </div>
+        <div class="stage">
+            <center>
+                <img id="img1" src="/static/from.jpeg">
+                <img id="result" src="/static/result.png">
+                <img id="img2" src="/static/to.jpeg">
+                <img id="result1" src="/static/result.png">
+            </center>
+        </div>
+        <script src="/static/main.js"></script>
+    </body>
+</html>
